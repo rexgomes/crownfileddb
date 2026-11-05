@@ -73,8 +73,8 @@ CREATE TABLE follow_up (
   followup_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   appointment_id INT NULL,
   due_date date NOT NULL,
-  priority VARCHAR(45) NOT NULL,
-  status VARCHAR(45) NOT NULL,
+  priority ENUM('High','Urgent','Routine') NOT NULL,
+  status ENUM('Scheduled','Completed') NOT NULL,
   notes VARCHAR(45) NULL,
   CONSTRAINT FK_followup_apt
     FOREIGN KEY (appointment_id)
@@ -85,10 +85,6 @@ ADD designation VARCHAR(45);
 
 ALTER TABLE medicines
 ADD route VARCHAR(45);
-
-ALTER TABLE follow_up
-MODIFY due_date VARCHAR(45),
-DROP status;
 
 INSERT INTO patient (patient_ID, patient_firstname, patient_lastname, Postcode, email, phone) VALUES
 ('OP001', 'Amina', 'Yusuf', 'NE1 4AB','amina@gmail.com', 07412345224),
@@ -140,11 +136,15 @@ INSERT INTO medicines (prescription_id, medicine_name, dose, route, frequency, d
 (3, 'Latanoprost', '50 micrograms/ml', 'Eye Drop', 'Once daily', 'Continuous'),
 (4, 'Sodium chloride drops', '5%', 'Eye Drop', 'Four times daily', '8 weeks');
 
-INSERT INTO follow_Up (appointment_id, due_date, priority, Notes) VALUES
-(1, '2026-11-16', 'High', 'Review IOP'),
-(2, '2026-11-02', 'Urgent', 'OCT before review'),
-(3, '2027-02-08', 'Routine', 'Visual field test'),
-(4, '2027-04-06', 'Routine', 'Monitor'),
-(5, '2026-12-02', 'Routine', 'Corneal topography');
+INSERT INTO follow_Up (appointment_id, due_date, priority,status, notes) VALUES
+(1, '2026-11-16', 'High', 'scheduled', 'Review IOP'),
+(2, '2026-11-02', 'Urgent', 'completed','OCT before review'),
+(3, '2027-02-08', 'Routine','scheduled', 'Visual field test'),
+(4, '2027-04-06', 'Routine', 'scheduled','Monitor'),
+(5, '2026-12-02', 'Routine', 'scheduled','Corneal topography');
+
+
+
+
 
 
