@@ -14,7 +14,7 @@ To ensure correct execution order and maintain referential integrity, please run
 ├── 03_procedure_and_trigger.sql # Stored procedures and automated triggers\
 ├── 04_security.sql           # Role-based access control (RBAC), hashing, and security\
 ├── 05_ERD/                   # Conceptual Entity-Relationship diagram assets\
-└── README.md                 # Project documentation and setup instructions\
+└── README.md                 # Project documentation and setup instructions
 
 Execution Steps
 Clone or download this repository to your local machine.
