@@ -9,12 +9,12 @@ A secure, scalable relational database system developed for Crownfield Eye Hospi
 To ensure correct execution order and maintain referential integrity, please run the SQL scripts in your environment in the following sequence:
 
 
-├── 01_schema.sql             # DDL schema creation, constraints, and data population
-├── 02_individual_queries.sql   # Aggregate queries, joins, subqueries, and views
-├── 03_procedure_and_trigger.sql # Stored procedures and automated triggers
-├── 04_security.sql           # Role-based access control (RBAC), hashing, and security
-├── 05_ERD/                   # Conceptual Entity-Relationship diagram assets
-└── README.md                 # Project documentation and setup instructions
+01_schema.sql             # DDL schema creation, constraints, and data population
+02_individual_queries.sql   # Aggregate queries, joins, subqueries, and views
+03_procedure_and_trigger.sql # Stored procedures and automated triggers
+04_security.sql           # Role-based access control (RBAC), hashing, and security
+05_ERD/                   # Conceptual Entity-Relationship diagram assets
+README.md                 # Project documentation and setup instructions
 
 # Execution Steps
 Clone or download this repository to your local machine.
